@@ -31,9 +31,13 @@ struct BaseballGame {
     
     private func makeAnswer() -> Int {
         var answer = 0
-        var numbersArray = [1,2,3,4,5,6,7,8,9]
+        var numbersArray = [0,1,2,3,4,5,6,7,8,9]
         
         for digit in 1...3 {
+            if let index = numbersArray.firstIndex(of: 0), digit == 3 {
+                numbersArray.remove(at: index)
+            }
+            
             let randomNumber = numbersArray.randomElement()!
             numbersArray.remove(at: numbersArray.firstIndex(of: randomNumber)!)
             
@@ -63,8 +67,6 @@ struct BaseballGame {
             print("3자리의 숫자를 입력해주세요.")
         } else if !validateUniqueNumbers(number: userInput) {
             print("서로 다른 3개의 숫자를 입력해주세요.")
-        } else if containsZero(number: userInput) {
-            print("0은 포함할 수 없습니다.")
         } else {
             return Int(userInput)!
         }
@@ -81,10 +83,6 @@ struct BaseballGame {
         }
         
         return uniqueNumber.count == 3 ? true : false
-    }
-    
-    private func containsZero(number: String) -> Bool {
-        return number.map { String($0) }.filter { $0 == "0" }.count > 0 ? true : false
     }
     
     private func printScore(number: String, answer: String) {
