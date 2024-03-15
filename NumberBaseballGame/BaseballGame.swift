@@ -11,8 +11,29 @@ struct BaseballGame {
     
     // MARK: - methods
     func start() {
-        print("환영합니다! 원하시는 번호를 입력해주세요")
-        print("1. 게임 시작하기  2. 게임 기록 보기  3. 종료하기")
+        var isRunning = true
+        
+        while isRunning {
+            print("환영합니다! 원하시는 번호를 입력해주세요")
+            print("1. 게임 시작하기  2. 게임 기록 보기  3. 종료하기")
+            
+            let userInput = Int(readLine()!)
+            
+            switch userInput {
+            case 1:
+                startGame()
+            case 2:
+                break
+            case 3:
+                break
+            default:
+                print("올바르지 않은 입력값입니다")
+            }
+        }
+    }
+    
+    private func startGame() {
+        print("< 게임을 시작합니다 >")
         print("1에서 9까지의 서로 다른 임의의 수 3개를 입력하세요.")
         
         let answer = makeAnswer()
