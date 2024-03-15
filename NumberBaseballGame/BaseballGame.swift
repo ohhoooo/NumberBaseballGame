@@ -23,7 +23,7 @@ struct BaseballGame {
                     print("정답입니다!")
                     break
                 } else {
-                    print("오답입니다! 다시 입력해주세요.")
+                    printScore(number: String(userNumber), answer: String(answer))
                 }
             }
         }
@@ -85,5 +85,33 @@ struct BaseballGame {
     
     private func containsZero(number: String) -> Bool {
         return number.map { String($0) }.filter { $0 == "0" }.count > 0 ? true : false
+    }
+    
+    private func printScore(number: String, answer: String) {
+        let numberArray = Array(number).map { String($0) }
+        let answerArray = Array(answer).map { String($0) }
+        
+        var strike = 0
+        var ball = 0
+        
+        for i in 0...2 {
+            if numberArray[i] == answerArray[i] {
+                strike += 1
+            }
+            
+            if numberArray[i] != answerArray[i] && answerArray.contains(numberArray[i]){
+                ball += 1
+            }
+        }
+        
+        if strike > 0 && ball > 0 {
+            print("\(strike)스트라이크 \(ball)볼")
+        } else if strike > 0 {
+            print("\(strike)스트라이크")
+        } else if ball > 0 {
+            print("\(ball)볼")
+        } else {
+            print("Nothing")
+        }
     }
 }
