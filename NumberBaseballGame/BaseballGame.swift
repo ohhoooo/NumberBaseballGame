@@ -11,6 +11,8 @@ struct BaseballGame {
     
     // MARK: - methods
     func start() {
+        print("환영합니다! 원하시는 번호를 입력해주세요")
+        print("1. 게임 시작하기  2. 게임 기록 보기  3. 종료하기")
         print("1에서 9까지의 서로 다른 임의의 수 3개를 입력하세요.")
         
         let answer = makeAnswer()
