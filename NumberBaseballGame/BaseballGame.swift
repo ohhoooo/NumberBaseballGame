@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct BaseballGame {
+final class BaseballGame {
+    // MARK: - properties
+    let recordManager = RecordManager()
     
     // MARK: - methods
     func start() {
@@ -21,9 +23,9 @@ struct BaseballGame {
             
             switch userInput {
             case 1:
-                startGame()
+                recordManager.add(trialCount: startGame())
             case 2:
-                break
+                recordManager.showRecords()
             case 3:
                 break
             default:
@@ -32,14 +34,16 @@ struct BaseballGame {
         }
     }
     
-    private func startGame() {
+    private func startGame() -> Int {
         print("< 게임을 시작합니다 >")
         print("1에서 9까지의 서로 다른 임의의 수 3개를 입력하세요.")
         
         let answer = makeAnswer()
+        var count = 0
         
         while true {
             let userInput = readLine()!
+            count += 1
             
             if let userNumber = validateInputNumber(userInput: userInput) {
                 if answer == userNumber {
@@ -50,6 +54,8 @@ struct BaseballGame {
                 }
             }
         }
+        
+        return count
     }
     
     private func makeAnswer() -> Int {

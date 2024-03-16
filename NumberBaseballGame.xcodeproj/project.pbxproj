@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		378B5E3F2BA2EFB100181FFB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B5E3E2BA2EFB100181FFB /* main.swift */; };
 		378B5E482BA2F67F00181FFB /* BaseballGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B5E472BA2F67F00181FFB /* BaseballGame.swift */; };
+		37A7AAF82BA5DDCF006FB38D /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7AAF72BA5DDCF006FB38D /* RecordManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		378B5E3E2BA2EFB100181FFB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		378B5E462BA2F17700181FFB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		378B5E472BA2F67F00181FFB /* BaseballGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballGame.swift; sourceTree = "<group>"; };
+		37A7AAF72BA5DDCF006FB38D /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				378B5E3E2BA2EFB100181FFB /* main.swift */,
+				37A7AAF72BA5DDCF006FB38D /* RecordManager.swift */,
 				378B5E472BA2F67F00181FFB /* BaseballGame.swift */,
 			);
 			path = NumberBaseballGame;
@@ -125,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A7AAF82BA5DDCF006FB38D /* RecordManager.swift in Sources */,
 				378B5E3F2BA2EFB100181FFB /* main.swift in Sources */,
 				378B5E482BA2F67F00181FFB /* BaseballGame.swift in Sources */,
 			);
