@@ -27,9 +27,10 @@ final class BaseballGame {
             case 2:
                 recordManager.showRecords()
             case 3:
-                break
+                print("< 숫자 야구 게임을 종료합니다 >")
+                isRunning = false
             default:
-                print("올바르지 않은 입력값입니다")
+                print("올바른 숫자를 입력해주세요!")
             }
         }
     }
